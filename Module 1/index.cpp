@@ -1,14 +1,15 @@
 // #include <stdio.h>;
 #include <iostream>;
-
+using namespace std;
 int main()
 {
-    int a = 100;
-    double b = 2.45;
-    char c = 'abcd';
+    char a = 'nice job';
+    char b;
+    cin >> b;
+    cout << b;
 
-    // printf("%i %lf %c", a, b, c);
-    std::cout << a << " " << b << " " << c << std::endl
-              << a;
+    int y = 85;
+    cout << (char)y;
+
     return 0;
 }
