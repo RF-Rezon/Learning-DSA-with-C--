@@ -1,20 +1,22 @@
 // #include <stdio.h>;
 #include <iostream>;
-#include <iomanip>;
-
+#include <algorithm>;
 using namespace std;
+
 int main()
 {
-    int x;
-    // EOF
-    while (cin >> x)
-    {
-        cout << x << endl;
-    }
-    // Setprecision
-    float value = 20.236123;
+    int x, y;
+    cin >> x >> y;
 
-    cout << fixed << setprecision(4) << value;
+    int z = min(x, y);
+    cout << z << endl;
+
+    int m = max(x, y);
+    cout << m << endl;
+
+    swap(x, y);
+
+    cout << x << " " << y;
 
     return 0;
 }
