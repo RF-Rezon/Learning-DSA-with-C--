@@ -1,15 +1,20 @@
 // #include <stdio.h>;
 #include <iostream>;
+#include <iomanip>;
+
 using namespace std;
 int main()
 {
-    char a = 'nice job';
-    char b;
-    cin >> b;
-    cout << b;
+    int x;
+    // EOF
+    while (cin >> x)
+    {
+        cout << x << endl;
+    }
+    // Setprecision
+    float value = 20.236123;
 
-    int y = 85;
-    cout << (char)y;
+    cout << fixed << setprecision(4) << value;
 
     return 0;
 }
