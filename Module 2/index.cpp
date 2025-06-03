@@ -8,18 +8,23 @@ public:
     int roll;
     double gpa;
 
-    Student(char n[], int r, double g)
+    Student(char name[], int roll, double gpa)
     {
-        strcpy(name, n);
-        roll = r;
-        gpa = g;
+        strcpy(this->name, name);
+        this->roll = roll;
+        this->gpa = gpa;
     }
 };
 
-int main()
+Student classFunc()
 {
     Student a("Mr Rahim", 10, 4.8);
+    return a;
+}
+int main()
+{
+    Student b = classFunc();
 
-    cout << a.name << " " << a.roll << " " << a.gpa;
+    cout << b.name << " " << b.roll << " " << b.gpa;
     return 0;
 }
