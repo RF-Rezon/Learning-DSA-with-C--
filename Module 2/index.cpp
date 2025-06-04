@@ -16,15 +16,14 @@ public:
     }
 };
 
-Student classFunc()
+Student *classFunc()
 {
-    Student a("Mr Rahim", 10, 4.8);
+    Student *a = new Student("Mr Rahim", 10, 4.8);
     return a;
 }
 int main()
 {
-    Student b = classFunc();
-
-    cout << b.name << " " << b.roll << " " << b.gpa;
+    Student *b = classFunc();
+    cout << (*b).name << " " << (*b).roll << " " << (*b).gpa;
     return 0;
 }
