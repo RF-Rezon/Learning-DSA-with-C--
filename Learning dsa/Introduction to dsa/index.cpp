@@ -6,31 +6,15 @@ int main()
     int n;
     cin >> n;
 
-    // for (int i = 1; i <= n; i++) // big O(n)
-    // {
-    //     if (n % i == 0)
-    //     {
-    //         cout << i << " ";
-    //     }
-    // }
-
-        // for (int i = 1; i <= sqrt(n); i++) // big O(sqrt(n))
-    // {
-    //     if (n % i == 0)
-    //     {
-    //         cout << i << " " << n / i << " ";
-    //     }
-    // }
-
-    // OR>>>>>>>>>>>>>>>>>>>>>>>
-
-    for (int i = 1; i * i <= n; i++) // big O(sqrt(n))
+    for (int i = 1; i <= n; i++) // O(n)
     {
-        if (n % i == 0)
+        for (int j = 1; j <= n; j *= 2) // O(log(n))
         {
-            cout << i << " " << n / i << " ";
+            cout << "Hello" << endl;
         }
     }
 
     return 0;
 }
+
+// Total complexity = O(n * log(n)) = O(nlog(n))
