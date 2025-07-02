@@ -26,15 +26,21 @@ int main()
     // (*body).next= tail;
     body->next = tail;
 
-    // Loving Procedure
-    cout << (*head).val << endl;
-    cout << (*((*head).next)).val << endl;
-    cout << (*((*((*head).next)).next)).val << endl;
+    // Printing Linked List
 
-    // With Arrow
-    cout << head->val << endl;
-    cout << head->next->val << endl;
-    cout << head->next->next->val << endl;
+    Node *temp = head;
 
+    while (temp != NULL)
+    {
+        cout << temp->val << endl;
+        temp = temp->next;
+    }
+
+    temp = head;
+    while (temp != NULL)
+    {
+        cout << temp->val << endl;
+        temp = temp->next;
+    }
     return 0;
 }
