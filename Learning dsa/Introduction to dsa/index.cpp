@@ -6,18 +6,21 @@ class Node
 public:
     int val;
     Node *index;
+
+    Node(int val)
+    {
+        this->val = val;
+    }
 };
 int main()
 {
-    Node a, b, c;
-
-    a.val = 10;
-    b.val = 20;
-    c.val = 30;
+    Node a(10), b(20), c(30);
 
     a.index = &b;
     b.index = &c;
     c.index = NULL;
 
+    cout << a.val << endl;
+    cout << a.index->val << endl;
     cout << a.index->index->val;
 }
