@@ -77,6 +77,18 @@ void delete_first_element_from_liked_list(Node *&head)
     head = head->next;
     delete deleteableNode;
 }
+
+void delete_at_any_position_from_liked_list(Node *head, int indx)
+{
+    Node *temp = head;
+    for (int i = 0; i < indx - 1; i++)
+    {
+        temp = temp->next;
+    }
+    Node *deletableNode = temp->next;
+    temp->next = temp->next->next;
+    delete deletableNode;
+}
 ////////////  Recurtion Code  ////////////////////////
 // void func(int i, int n)
 // {
@@ -104,6 +116,7 @@ int main()
     }
 
     delete_first_element_from_liked_list(head);
+    delete_at_any_position_from_liked_list(head, 2);
 
     print_the_linked_list(head);
 
