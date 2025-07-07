@@ -18,7 +18,6 @@ void add_a_node_at_fist(Node *&head, int val)
 {
     Node *newNode = new Node(val);
     newNode->next = head;
-    // (*newNode).next = head;
     head = newNode;
 }
 
