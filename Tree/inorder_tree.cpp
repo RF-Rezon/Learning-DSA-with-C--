@@ -16,13 +16,36 @@ public:
     }
 };
 
-void preorder(Node *root)
+// void preorder(Node *root)
+// {
+//     if (root == NULL)
+//         return;
+//     preorder(root->left);
+//     cout << root->val << " ";
+//     preorder(root->right);
+// }
+
+void level_order(Node *root)
 {
     if (root == NULL)
+    {
+        cout << "No Tree." << endl;
         return;
-    preorder(root->left);
-    cout << root->val << " ";
-    preorder(root->right);
+    }
+    queue<Node *> q;
+    q.push(root);
+
+    while (!q.empty())
+    {
+        Node *f = q.front();
+        q.pop();
+        cout << f->val << " ";
+
+        if (f->left)
+            q.push(f->left);
+        if (f->right)
+            q.push(f->right);
+    }
 }
 
 int main()
@@ -42,7 +65,8 @@ int main()
     b->left = e;
     b->right = f;
 
-    preorder(root);
+    // preorder(root);
+    level_order(root);
 
     return 0;
 }
