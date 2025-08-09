@@ -16,15 +16,6 @@ public:
     }
 };
 
-// void preorder(Node *root)
-// {
-//     if (root == NULL)
-//         return;
-//     preorder(root->left);
-//     cout << root->val << " ";
-//     preorder(root->right);
-// }
-
 void level_order(Node *root)
 {
     if (root == NULL)
@@ -48,25 +39,30 @@ void level_order(Node *root)
     }
 }
 
+Node *convert(int a[], int n, int l, int r)
+{
+    while (l > r)
+        return NULL;
+    int mid = (l + r) / 2;
+    Node *root = new Node(a[mid]);
+    Node *leftroot = convert(a, n, l, mid - 1);
+    Node *rightroot = convert(a, n, mid + 1, r);
+    root->left = leftroot;
+    root->right = rightroot;
+
+    return root;
+}
+
 int main()
 {
-    Node *root = new Node(50);
-    Node *a = new Node(30);
-    Node *b = new Node(20);
-    Node *c = new Node(20);
-    Node *d = new Node(10);
-    Node *e = new Node(10);
-    Node *f = new Node(10);
-
-    root->left = a;
-    root->right = b;
-    a->left = c;
-    a->right = d;
-    b->left = e;
-    b->right = f;
-
-    // preorder(root);
+    int num;
+    cin >> num;
+    int arr[num];
+    for (int i = 0; i < num; i++)
+    {
+        cin >> arr[i];
+    }
+    Node *root = convert(arr, num, 0, num - 1);
     level_order(root);
-
     return 0;
 }

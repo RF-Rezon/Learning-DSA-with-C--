@@ -27,12 +27,12 @@ void preorder(Node *root)
 
 int main()
 {
-    Node *root = new Node(50);
-    Node *a = new Node(30);
-    Node *b = new Node(20);
-    Node *c = new Node(20);
-    Node *d = new Node(10);
-    Node *e = new Node(10);
+    Node *root = new Node(90);
+    Node *a = new Node(80);
+    Node *b = new Node(70);
+    Node *c = new Node(60);
+    Node *d = new Node(50);
+    Node *e = new Node(20);
     Node *f = new Node(10);
 
     root->left = a;

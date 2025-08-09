@@ -73,11 +73,11 @@ bool search(Node *root, int target_val)
 
     if (root->val > target_val)
     {
-        search(root->left, target_val);
+        return search(root->left, target_val);
     }
     else
     {
-        search(root->right, target_val);
+        return search(root->right, target_val);
     }
 }
 
